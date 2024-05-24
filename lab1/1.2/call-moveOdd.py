@@ -1,7 +1,7 @@
 import ctypes
 
 # 加载 C 库
-lib = ctypes.CDLL("./moveOdd.so")  # 替换为你的 C 库文件路径
+lib = ctypes.CDLL("./moveOdd.so")  
 
 # 定义 C 函数的参数类型
 lib.moveOdd_api.argtypes = [
