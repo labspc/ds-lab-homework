@@ -67,8 +67,8 @@ int main() {
     struct ListNode* head = createList(size);
 
     // 统计不及格人数并输出
-    int failCount = less60(head);
-    printf("不及格人数：%d\n", failCount);
+    int fail = less60(head);
+    printf("不及格人数：%d\n", fail);
 
     return 0;
 }
