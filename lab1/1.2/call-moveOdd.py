@@ -1,7 +1,7 @@
 import ctypes
 
 # 加载 C 库
-lib = ctypes.CDLL("./moveOdd.so")  
+lib = ctypes.CDLL("./libmoveOdd_cc.so")  
 
 # 定义 C 函数的参数类型
 lib.moveOdd_api.argtypes = [
@@ -21,7 +21,11 @@ def typeTrans(A):
     return list(A_arr)
 
 # 示例输入
-A = [2,4,6,8,1,7,9,13]
+# A = [2,4,6,8,1,7,9,13]
+# A = [1,4,6,7,9,8,11,4,2,3]
+
+# 从键盘输入
+A = list(map(int, input("输入顺序表A的元素（以空格分隔）：").split()))
 print("原始:", A)
 # 调用函数
 result = typeTrans(A)
