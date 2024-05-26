@@ -39,14 +39,15 @@ func HalfRead(s *C.char) cBool {
 	str := C.GoString(s)
 	stack := &Stack{}
 	length := len(str)
+	
+	// 一进来不用管，直接拿到商数，将前半部分字符压入栈中
 	mid := length / 2
-
-	// 将前半部分字符压入栈中
 	for i := 0; i < mid; i++ {
 		stack.Push(str[i])
 	}
 
-	// 如果长度为奇数，跳过中间字符
+
+	// 如果长度为奇数，mid++ 跳过中间字符；偶数直接跳过，进入后面的 for 遍历比较
 	if length%2 != 0 {
 		mid++
 	}
